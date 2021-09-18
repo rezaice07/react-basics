@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rezaice07/react-basics/static/css/main.a617e044.chunk.css",
+    "main.js": "/rezaice07/react-basics/static/js/main.5d50a9c0.chunk.js",
+    "main.js.map": "/rezaice07/react-basics/static/js/main.5d50a9c0.chunk.js.map",
+    "runtime-main.js": "/rezaice07/react-basics/static/js/runtime-main.c7cecf14.js",
+    "runtime-main.js.map": "/rezaice07/react-basics/static/js/runtime-main.c7cecf14.js.map",
+    "static/js/2.99d40fd6.chunk.js": "/rezaice07/react-basics/static/js/2.99d40fd6.chunk.js",
+    "static/js/2.99d40fd6.chunk.js.map": "/rezaice07/react-basics/static/js/2.99d40fd6.chunk.js.map",
+    "static/js/3.7a76c8ed.chunk.js": "/rezaice07/react-basics/static/js/3.7a76c8ed.chunk.js",
+    "static/js/3.7a76c8ed.chunk.js.map": "/rezaice07/react-basics/static/js/3.7a76c8ed.chunk.js.map",
+    "index.html": "/rezaice07/react-basics/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/rezaice07/react-basics/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.99d40fd6.chunk.js.LICENSE.txt": "/rezaice07/react-basics/static/js/2.99d40fd6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c7cecf14.js",
+    "static/js/2.99d40fd6.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.5d50a9c0.chunk.js"
+  ]
+}
