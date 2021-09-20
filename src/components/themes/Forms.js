@@ -1,9 +1,33 @@
 import React, { Component } from 'react'
+import EventHandlingOnFunctionalCom from './EventHandlingOnFunctionalCom'
+import Car from '../Cars'
 
-export class Forms extends Component {
+class Forms extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            message: ""
+        }
+    }   
+
+     submitForm = () => {
+        this.setState({
+            message: "Form has been submitted",
+        },
+            () => { 
+                var mycar = new Car();
+                console.log( mycar.getPosts()); }
+        )
+    }   
+
+
     render() {
+        const { message } = this.state;
+
         return (
-            
+
             <form className="row g-3 needs-validation" noValidate>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">First name</label>
@@ -37,16 +61,6 @@ export class Forms extends Component {
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <label htmlFor="validationCustom04" className="form-label">State</label>
-                    <select className="form-select" id="validationCustom04" required>
-                        <option selected disabled value>Choose...</option>
-                        <option>...</option>
-                    </select>
-                    <div className="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                </div>
-                <div className="col-md-3">
                     <label htmlFor="validationCustom05" className="form-label">Zip</label>
                     <input type="text" className="form-control" id="validationCustom05" required />
                     <div className="invalid-feedback">
@@ -64,9 +78,14 @@ export class Forms extends Component {
                         </div>
                     </div>
                 </div>
+                <span>{message}</span>
                 <div className="col-12">
-                    <button className="btn btn-primary" type="submit">Submit form</button>
+                    <button className="btn btn-primary" type="button" onClick={() => this.submitForm()}>Submit form</button>
                 </div>
+
+                <hr />
+                <EventHandlingOnFunctionalCom />
+
             </form>
 
         )
@@ -74,3 +93,9 @@ export class Forms extends Component {
 }
 
 export default Forms
+
+
+
+
+
+
