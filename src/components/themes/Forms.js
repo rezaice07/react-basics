@@ -8,23 +8,26 @@ class Forms extends Component {
         super(props)
 
         this.state = {
-            message: ""
+            posts: []
         }
-    }   
+    }
 
-     submitForm = () => {
-        this.setState({
-            message: "Form has been submitted",
-        },
-            () => { 
-                var mycar = new Car();
-                console.log( mycar.getPosts()); }
-        )
-    }   
+    submitForm = () => {
+
+        var mycar = new Car();
+        mycar.getPosts().then(response => {
+            console.log(response);
+            this.setState({ posts: response })
+        })
+
+        console.log(mycar.hello());
+
+
+    }
 
 
     render() {
-        const { message } = this.state;
+        const { posts } = this.state;
 
         return (
 
@@ -78,7 +81,6 @@ class Forms extends Component {
                         </div>
                     </div>
                 </div>
-                <span>{message}</span>
                 <div className="col-12">
                     <button className="btn btn-primary" type="button" onClick={() => this.submitForm()}>Submit form</button>
                 </div>
@@ -86,6 +88,24 @@ class Forms extends Component {
                 <hr />
                 <EventHandlingOnFunctionalCom />
 
+
+                List Of Posts
+                {
+                    posts.length && (
+                        <table className='table'>
+                            <thead>
+                                <tr><th>Title</th><th>Body</th></tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    posts.length ?
+                                        posts.map(post => <tr key={post.id}><td>{post.title}</td><td>{post.body}</td></tr>)
+                                        : <tr><td colSpan={2}>There are no posts to show.</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    )
+                }
             </form>
 
         )
