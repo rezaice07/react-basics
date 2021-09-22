@@ -46,7 +46,7 @@ export class Dashboard extends Component {
                                     }
                                 </tbody>
                             </table>
-                        )
+                        ) 
                     }
                 </div>
             </>
