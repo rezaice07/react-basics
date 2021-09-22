@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import EventHandlingOnFunctionalCom from './EventHandlingOnFunctionalCom'
-import Car from '../Cars'
 
 class Forms extends Component {
 
@@ -8,26 +7,16 @@ class Forms extends Component {
         super(props)
 
         this.state = {
-            posts: []
+           
         }
     }
 
-    submitForm = () => {
-
-        var mycar = new Car();
-        mycar.getPosts().then(response => {
-            console.log(response);
-            this.setState({ posts: response })
-        })
-
-        console.log(mycar.hello());
-
-
+    submitForm = () => {       
+        console.log('ffffffffffff');
     }
 
 
-    render() {
-        const { posts } = this.state;
+    render() {      
 
         return (
 
@@ -86,26 +75,7 @@ class Forms extends Component {
                 </div>
 
                 <hr />
-                <EventHandlingOnFunctionalCom />
-
-
-                List Of Posts
-                {
-                    posts.length && (
-                        <table className='table'>
-                            <thead>
-                                <tr><th>Title</th><th>Body</th></tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    posts.length ?
-                                        posts.map(post => <tr key={post.id}><td>{post.title}</td><td>{post.body}</td></tr>)
-                                        : <tr><td colSpan={2}>There are no posts to show.</td></tr>
-                                }
-                            </tbody>
-                        </table>
-                    )
-                }
+                <EventHandlingOnFunctionalCom />                
             </form>
 
         )
