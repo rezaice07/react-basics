@@ -6,24 +6,32 @@ class Forms extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-           
-        }
+        //this.state = {
+            
+        //}
+
+        this.inputRef = React.createRef()
     }
 
-    submitForm = () => {       
+    componentDidMount = () => {
+        this.inputRef.current.focus();
+        console.log(this.inputRef);
+
+        console.log(this.inputRef.current.value);
+    }
+
+    submitForm = () => {
         console.log('ffffffffffff');
     }
 
-
-    render() {      
+    render() {
 
         return (
 
             <form className="row g-3 needs-validation" noValidate>
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">First name</label>
-                    <input type="text" className="form-control" id="validationCustom01" defaultValue="Mark" required />
+                    <input type="text" ref={this.inputRef} className="form-control" id="validationCustom01" defaultValue="Reja" required />
                     <div className="valid-feedback">
                         Looks good!
                     </div>
@@ -75,7 +83,7 @@ class Forms extends Component {
                 </div>
 
                 <hr />
-                <EventHandlingOnFunctionalCom />                
+                <EventHandlingOnFunctionalCom />
             </form>
 
         )
